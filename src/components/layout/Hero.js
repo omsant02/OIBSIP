@@ -16,11 +16,11 @@ export default function Hero() {
           delicious joy in life
         </p>
         <div className="flex gap-4 text-sm">
-          <button className="bg-primary uppercase gap-2 text-white flex items-center px-4 py-2 rounded-full ">
+          <button className="bg-primary justify-center uppercase gap-2 text-white flex items-center px-4 py-2 rounded-full ">
             Order now
             <Right />
           </button>
-          <button className="flex gap-2 py-2 text-gray-600 font-semibold rounded-full">
+          <button className="flex items-center gap-2 py-2 text-gray-600 font-semibold border-0">
             Learn more
             <Right />
           </button>
