@@ -7,7 +7,7 @@ export default function UserTabs({ isAdmin }) {
   const path = usePathname();
   return (
     <div className="flex mx-auto justify-center gap-2 tabs">
-      <Link className={path === "/profile" ? "active" : ""} href={"/Profile"}>
+      <Link className={path === "/profile" ? "active" : ""} href={"/profile"}>
         Profile
       </Link>
       {isAdmin && (
@@ -19,8 +19,8 @@ export default function UserTabs({ isAdmin }) {
             Categories
           </Link>
           <Link
-            className={path === "/menu-items" ? "active" : ""}
             href={"/menu-items"}
+            className={path.includes("menu-items") ? "active" : ""}
           >
             Menu Items
           </Link>

@@ -3,6 +3,7 @@ import { Category } from "@/models/Category";
 import mongoose from "mongoose";
 
 export async function POST(req) {
+  mongoose.connect(process.env.MONGO_URL);
   const { name } = await req.json();
   const categoryDoc = await Category.create({ name });
   return Response.json(categoryDoc);
