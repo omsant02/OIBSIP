@@ -1,4 +1,5 @@
 "use client";
+import DeleteButton from "@/components/DeleteButton";
 import UserTabs from "@/components/layout/UserTabs";
 import { useEffect, useState } from "react";
 import { useProfile } from "../../components/UseProfile";
@@ -135,9 +136,10 @@ export default function CategoriesPage() {
                 >
                   Edit
                 </button>
-                <button onClick={() => handleDeleteClick(c._id)} type="button">
-                  Delete
-                </button>
+                <DeleteButton
+                  label="Delete"
+                  onDelete={() => handleDeleteClick(c._id)}
+                />
               </div>
             </div>
           ))}

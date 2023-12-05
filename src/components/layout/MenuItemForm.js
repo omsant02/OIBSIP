@@ -16,6 +16,14 @@ export default function MenuItemForm({ onSubmit, menuItem }) {
     menuItem?.extraIngredientPrices || []
   );
 
+  useEffect(() => {
+    fetch("/api/categories").then((res) => {
+      res.json().then((categories) => {
+        setCategories(categories);
+      });
+    });
+  }, []);
+
   return (
     <form
       onSubmit={(ev) =>
@@ -26,6 +34,7 @@ export default function MenuItemForm({ onSubmit, menuItem }) {
           basePrice,
           sizes,
           extraIngredientPrices,
+          category,
         })
       }
       className="mt-8 max-w-md mx-auto"
@@ -50,6 +59,18 @@ export default function MenuItemForm({ onSubmit, menuItem }) {
             value={description}
             onChange={(ev) => setDescription(ev.target.value)}
           />
+          <label>Category</label>
+          <select
+            value={category}
+            onChange={(ev) => setCategory(ev.target.value)}
+          >
+            {categories?.length > 0 &&
+              categories.map((c) => (
+                <option key={c._id} value={c._id}>
+                  {c.name}
+                </option>
+              ))}
+          </select>
           <label>Base price</label>
           <input
             type="text"
