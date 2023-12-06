@@ -66,7 +66,7 @@ export default function UserForm({ user, onSave }) {
           value={streetAddress}
           onChange={(ev) => setStreetAddress(ev.target.value)}
         />
-        <div className="flex gap-2">
+        <div className="grid grid-cols-2 gap-2">
           <div>
             <label>Postal code</label>
             <input
@@ -93,6 +93,24 @@ export default function UserForm({ user, onSave }) {
           value={country}
           onChange={(ev) => setCountry(ev.target.value)}
         />
+        {loggedInUserData.admin && (
+          <div>
+            <label
+              className="p-2 inline-flex items-center gap-2 mb-2"
+              htmlFor="adminCb"
+            >
+              <input
+                id="adminCb"
+                type="checkbox"
+                className=""
+                value={"1"}
+                checked={admin}
+                onChange={(ev) => setAdmin(ev.target.checked)}
+              />
+              <span> Admin</span>
+            </label>
+          </div>
+        )}
         <button type="submit">Save</button>
       </form>
     </div>

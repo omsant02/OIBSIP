@@ -1,6 +1,10 @@
 "use client";
+import { CartContext } from "@/components/AppContext";
+// import Bars2 from "@/components/icons/Bars2";
+import ShoppingCart from "@/components/icons/ShoppingCart";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
+import { useContext, useState } from "react";
 
 export default function Header() {
   const session = useSession();
@@ -8,6 +12,8 @@ export default function Header() {
   const status = session?.status;
   const userData = session.data?.user;
   let userName = userData?.name || userData?.email;
+  const { cartProducts } = useContext(CartContext);
+  // const [mobileNavOpen, setMobileNavOpen] = useState(false);
   if (userName && userName.includes(" ")) {
     userName = userName.split(" ")[0];
   }
@@ -19,9 +25,9 @@ export default function Header() {
           ST PIZZA
         </Link>
         <Link href={"/"}>Home</Link>
-        <Link href={""}>Menu</Link>
-        <Link href={""}>About</Link>
-        <Link href={""}>Contact</Link>
+        <Link href={"/menu"}>Menu</Link>
+        <Link href={"/#about"}>About</Link>
+        <Link href={"/#contact"}>Contact</Link>
       </nav>
       <nav className="flex items-center gap-4 text-gray-500">
         {status === "authenticated" && (
@@ -48,6 +54,12 @@ export default function Header() {
             </Link>
           </>
         )}
+        <Link href={"/cart"} className="relative">
+          <ShoppingCart />
+          <span className="absolute -top-2 -right-4 bg-primary text-white text-xs py-1 px-1 rounded-full leading-3">
+            {cartProducts.length}
+          </span>
+        </Link>
       </nav>
     </header>
   );
