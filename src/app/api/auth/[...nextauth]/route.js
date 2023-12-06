@@ -28,7 +28,8 @@ export const authOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials, req) {
-        const { email, password } = credentials;
+        const email = credentials?.email;
+        const password = credentials?.password;
         mongoose.connect(process.env.MONGO_URL);
 
         const user = await User.findOne({ email });

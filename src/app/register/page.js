@@ -1,7 +1,9 @@
 "use client";
+
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
+import { signIn } from "next-auth/react";
 
 export default function RegisterPage() {
   const [email, setEmail] = useState("");
