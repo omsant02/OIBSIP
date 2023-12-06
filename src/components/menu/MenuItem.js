@@ -2,7 +2,7 @@ import { CartContext } from "@/components/AppContext";
 import MenuItemTile from "@/components/menu/MenuItemTile";
 import Image from "next/image";
 import { useContext, useState } from "react";
-// import FlyingButton from "react-flying-item";
+import FlyingButton from "react-flying-item";
 import toast from "react-hot-toast";
 
 export default function MenuItem(menuItem) {
@@ -76,10 +76,7 @@ export default function MenuItem(menuItem) {
                 <div className="py-2">
                   <h3 className="text-center text-gray-700">Pick your size</h3>
                   {sizes.map((size) => (
-                    <label
-                      // key={size._id}
-                      className="flex items-center gap-2 p-4 border rounded-md mb-1"
-                    >
+                    <label className="flex items-center gap-2 p-4 border rounded-md mb-1">
                       <input
                         type="radio"
                         onChange={() => setSelectedSize(size)}
@@ -95,10 +92,7 @@ export default function MenuItem(menuItem) {
                 <div className="py-2">
                   <h3 className="text-center text-gray-700">Any extras?</h3>
                   {extraIngredientPrices.map((extraThing) => (
-                    <label
-                      // key={extraThing._id}
-                      className="flex items-center gap-2 p-4 border rounded-md mb-1"
-                    >
+                    <label className="flex items-center gap-2 p-4 border rounded-md mb-1">
                       <input
                         type="checkbox"
                         onChange={(ev) => handleExtraThingClick(ev, extraThing)}
@@ -112,13 +106,14 @@ export default function MenuItem(menuItem) {
                   ))}
                 </div>
               )}
-              <button
-                onClick={handleAddToCartButtonClick}
-                className="primary sticky bottom-2"
-                type="button"
-              >
-                Add to cart ${selectedPrice}
-              </button>
+              <FlyingButton targetTop={"5%"} targetLeft={"95%"} src={image}>
+                <div
+                  className="primary sticky bottom-2"
+                  onClick={handleAddToCartButtonClick}
+                >
+                  Add to cart ${selectedPrice}
+                </div>
+              </FlyingButton>
               <button className="mt-2" onClick={() => setShowPopup(false)}>
                 Cancel
               </button>
