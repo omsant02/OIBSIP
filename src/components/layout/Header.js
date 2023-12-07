@@ -1,6 +1,6 @@
 "use client";
 import { CartContext } from "@/components/AppContext";
-// import Bars2 from "@/components/icons/Bars2";
+
 import ShoppingCart from "@/components/icons/ShoppingCart";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
