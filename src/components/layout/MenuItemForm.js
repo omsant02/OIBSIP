@@ -1,5 +1,3 @@
-import Plus from "@/components/icons/Plus";
-import Trash from "@/components/icons/Trash";
 import EditableImage from "@/components/layout/EditableImage";
 import MenuItemPriceProps from "@/components/layout/MenuItemPriceProps";
 import { useEffect, useState } from "react";
@@ -40,7 +38,7 @@ export default function MenuItemForm({ onSubmit, menuItem }) {
       className="mt-8 max-w-2xl mx-auto"
     >
       <div
-        className=" gap-4 grid items-start"
+        className="md:grid items-start gap-4"
         style={{ gridTemplateColumns: ".3fr .7fr" }}
       >
         <div>

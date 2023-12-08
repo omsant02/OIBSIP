@@ -16,7 +16,7 @@ export default function MenuPage() {
   }, []);
 
   return (
-    <section>
+    <section className="mt-8">
       {categories?.length > 0 &&
         categories.map((c) => (
           <div key={c._id}>

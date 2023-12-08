@@ -76,7 +76,10 @@ export default function MenuItem(menuItem) {
                 <div className="py-2">
                   <h3 className="text-center text-gray-700">Pick your size</h3>
                   {sizes.map((size) => (
-                    <label className="flex items-center gap-2 p-4 border rounded-md mb-1">
+                    <label
+                      key={size._id}
+                      className="flex items-center gap-2 p-4 border rounded-md mb-1"
+                    >
                       <input
                         type="radio"
                         onChange={() => setSelectedSize(size)}
@@ -92,7 +95,10 @@ export default function MenuItem(menuItem) {
                 <div className="py-2">
                   <h3 className="text-center text-gray-700">Any extras?</h3>
                   {extraIngredientPrices.map((extraThing) => (
-                    <label className="flex items-center gap-2 p-4 border rounded-md mb-1">
+                    <label
+                      key={extraThing._id}
+                      className="flex items-center gap-2 p-4 border rounded-md mb-1"
+                    >
                       <input
                         type="checkbox"
                         onChange={(ev) => handleExtraThingClick(ev, extraThing)}

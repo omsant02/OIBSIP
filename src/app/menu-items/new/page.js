@@ -1,7 +1,5 @@
 "use client";
 import Left from "@/components/icons/Left";
-import Right from "@/components/icons/Right";
-import EditableImage from "@/components/layout/EditableImage";
 import MenuItemForm from "@/components/layout/MenuItemForm";
 import UserTabs from "@/components/layout/UserTabs";
 import { useProfile } from "@/components/UseProfile";
@@ -49,7 +47,7 @@ export default function NewMenuItemPage() {
     <section className="mt-8">
       <UserTabs isAdmin={true} />
       <div className="max-w-2xl mx-auto mt-8">
-        <Link className="button" href={"/menu-items"}>
+        <Link href={"/menu-items"} className="button">
           <Left />
           <span>Show all menu items</span>
         </Link>

@@ -1,5 +1,4 @@
 "use client";
-import SectionHeaders from "@/components/layout/SectionHeaders";
 import UserTabs from "@/components/layout/UserTabs";
 import { useProfile } from "@/components/UseProfile";
 import { dbTimeForHuman } from "@/libs/datetime";
@@ -32,7 +31,10 @@ export default function OrdersPage() {
         {loadingOrders && <div>Loading orders...</div>}
         {orders?.length > 0 &&
           orders.map((order) => (
-            <div className="bg-gray-100 mb-2 p-4 rounded-lg flex flex-col md:flex-row items-center gap-6">
+            <div
+              key={order._id}
+              className="bg-gray-100 mb-2 p-4 rounded-lg flex flex-col md:flex-row items-center gap-6"
+            >
               <div className="grow flex flex-col md:flex-row items-center gap-6">
                 <div>
                   <div

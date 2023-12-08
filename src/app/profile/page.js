@@ -1,15 +1,10 @@
 "use client";
-import { signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { resolve } from "path";
-import Link from "next/link";
 import UserTabs from "@/components/layout/UserTabs";
-import EditableImage from "@/components/layout/EditableImage";
 import UserForm from "@/components/layout/UserForm";
-
 export default function ProfilePage() {
   const session = useSession();
 
@@ -64,7 +59,6 @@ export default function ProfilePage() {
   return (
     <section className="mt-8">
       <UserTabs isAdmin={isAdmin} />
-
       <div className="max-w-2xl mx-auto mt-8">
         <UserForm user={user} onSave={handleProfileInfoUpdate} />
       </div>

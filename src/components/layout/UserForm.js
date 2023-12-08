@@ -22,15 +22,13 @@ export default function UserForm({ user, onSave }) {
     if (propName === "city") setCity(value);
     if (propName === "country") setCountry(value);
   }
-
   return (
-    <div className="flex gap-4">
+    <div className="md:flex gap-4">
       <div>
-        <div className=" p-2 rounded-lg relative max-w-[120px]">
+        <div className="p-2 rounded-lg relative max-w-[120px]">
           <EditableImage link={image} setLink={setImage} />
         </div>
       </div>
-
       <form
         className="grow"
         onSubmit={(ev) =>
@@ -56,9 +54,9 @@ export default function UserForm({ user, onSave }) {
         <label>Email</label>
         <input
           type="email"
-          placeholder="email"
           disabled={true}
           value={user.email}
+          placeholder={"email"}
         />
         <AddressInputs
           addressProps={{ phone, streetAddress, postalCode, city, country }}
@@ -78,7 +76,7 @@ export default function UserForm({ user, onSave }) {
                 checked={admin}
                 onChange={(ev) => setAdmin(ev.target.checked)}
               />
-              <span> Admin</span>
+              <span>Admin</span>
             </label>
           </div>
         )}

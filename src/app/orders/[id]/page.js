@@ -11,7 +11,6 @@ export default function OrderPage() {
   const [order, setOrder] = useState();
   const [loadingOrder, setLoadingOrder] = useState(true);
   const { id } = useParams();
-
   useEffect(() => {
     if (typeof window.console !== "undefined") {
       if (window.location.href.includes("clear-cart=1")) {
@@ -29,13 +28,12 @@ export default function OrderPage() {
     }
   }, []);
 
-    let subtotal = 0;
+  let subtotal = 0;
   if (order?.cartProducts) {
     for (const product of order?.cartProducts) {
       subtotal += cartProductPrice(product);
     }
   }
-
 
   return (
     <section className="max-w-2xl mx-auto mt-8">
@@ -46,19 +44,18 @@ export default function OrderPage() {
           <p>We will call you when your order will be on the way.</p>
         </div>
       </div>
-      {loadingOrder && (
-        <div>Loading order...</div>
-      )}
+      {loadingOrder && <div>Loading order...</div>}
       {order && (
         <div className="grid md:grid-cols-2 md:gap-16">
           <div>
-             {order.cartProducts.map(product => (
-              <CartProduct  product={product} />
+            {order.cartProducts.map((product) => (
+              <CartProduct key={product._id} product={product} />
             ))}
-
             <div className="text-right py-2 text-gray-500">
               Subtotal:
-              <span className="text-black font-bold inline-block w-8">${subtotal}</span>
+              <span className="text-black font-bold inline-block w-8">
+                ${subtotal}
+              </span>
               <br />
               Delivery:
               <span className="text-black font-bold inline-block w-8">$5</span>
@@ -71,7 +68,7 @@ export default function OrderPage() {
           </div>
           <div>
             <div className="bg-gray-100 p-4 rounded-lg">
-              <AddressInputs disabled={true} addressProps={...order} />
+              <AddressInputs disabled={true} addressProps={order} />
             </div>
           </div>
         </div>

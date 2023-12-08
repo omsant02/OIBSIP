@@ -45,7 +45,7 @@ export default function RegisterPage() {
       )}
       {error && (
         <div className="my-4 text-center">
-          An error has occured.
+          An error has occurred.
           <br />
           Please try again later
         </div>

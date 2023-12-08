@@ -1,13 +1,10 @@
 "use client";
 import Right from "@/components/icons/Right";
-import EditableImage from "@/components/layout/EditableImage";
 import UserTabs from "@/components/layout/UserTabs";
 import { useProfile } from "@/components/UseProfile";
 import Image from "next/image";
 import Link from "next/link";
-import { resolve } from "path";
 import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
 
 export default function MenuItemsPage() {
   const [menuItems, setMenuItems] = useState([]);
@@ -44,6 +41,7 @@ export default function MenuItemsPage() {
           {menuItems?.length > 0 &&
             menuItems.map((item) => (
               <Link
+                key={item._id}
                 href={"/menu-items/edit/" + item._id}
                 className="bg-gray-200 rounded-lg p-4"
               >
