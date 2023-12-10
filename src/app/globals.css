@@ -57,3 +57,13 @@ div.tabs > *.active {
 .flying-button-parent button {
   @apply border-primary bg-primary text-white rounded-full;
 }
+
+.a {
+  @apply flex w-full justify-center gap-2 font-semibold;
+  @apply border border-gray-300 rounded-full px-6 py-2;
+  @apply flex justify-center bg-primary uppercase items-center gap-2 text-white px-4 py-2 rounded-full;
+}
+
+.b {
+  @apply border-0;
+}

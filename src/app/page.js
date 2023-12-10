@@ -11,22 +11,26 @@ export default function Home() {
         <SectionHeaders subHeader={"Our story"} mainHeader={"About us"} />
         <div className=" text-gray-500 max-w-md mx-auto mt-4 flex flex-col gap-4">
           <p>
-            gihsgvish k efshhfrwovhsoushfuofhrv h rhfojhdiohfwe hdfil vwheuvhh
-            rhv dhv vsdhv dh sjv sjhvsfh dvhvdfvhvciduhvidfh n df
-            vdfhvbfhvdfbvfi vdivdfvfvh fvhddfhvuicvhdfvhfjkhcvnfbxv
-            hdgkgsbniuxhkjbdf nbbodfhjljdfjvil xuvkm
+            Welcome to ST, where passion for pizza meets culinary expertise! Our
+            journey began with a simple dream – to create the perfect pizza
+            experience for our community. We believe in using only the finest
+            ingredients, crafted with love, to deliver a slice of happiness to
+            every customer.
           </p>
           <p>
-            gihsgvish k efshhfrwovhsoushfuofhrv h rhfojhdiohfwe hdfil vwheuvhh
-            rhv dhv vsdhv dh sjv sjhvsfh dvhvdfvhvciduhvidfh n df
-            vdfhvbfhvdfbvfi vdivdfvfvh fvhddfhvuicvhdfvhfjkhcvnfbxv
-            hdgkgsbniuxhkjbdf nbbodfhjljdfjvil xuvkm
+            At ST, we pride ourselves on innovation and authenticity. From our
+            hand-tossed crusts to our signature sauces, each element is
+            carefully curated to tantalize your taste buds. Our commitment to
+            quality extends beyond the kitchen; it's embedded in our culture. We
+            strive to create not just meals but memories, turning every dining
+            moment into a celebration of flavors and togetherness.
           </p>
           <p>
-            gihsgvish k efshhfrwovhsoushfuofhrv h rhfojhdiohfwe hdfil vwheuvhh
-            rhv dhv vsdhv dh sjv sjhvsfh dvhvdfvhvciduhvidfh n df
-            vdfhvbfhvdfbvfi vdivdfvfvh fvhddfhvuicvhdfvhfjkhcvnfbxv
-            hdgkgsbniuxhkjbdf nbbodfhjljdfjvil xuvkm
+            Join us on this delightful journey as we redefine the pizza
+            experience. Whether you're a traditionalist or an adventurous eater,
+            our diverse menu has something for everyone. Thank you for choosing
+            ST, where every pizza is a masterpiece, and every customer is a
+            cherished part of our story.
           </p>
         </div>
       </section>

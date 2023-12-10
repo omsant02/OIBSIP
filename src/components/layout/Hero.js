@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Right from "../icons/Right";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -18,13 +19,29 @@ export default function Hero() {
           delicious joy in life
         </p>
         <div className="flex gap-4 text-sm">
-          <button className="flex justify-center bg-primary uppercase flex items-center gap-2 text-white px-4 py-2 rounded-full">
+          {/* <button className="flex justify-center bg-primary uppercase flex items-center gap-2 text-white px-4 py-2 rounded-full">
             Order now
             <Right />
-          </button>
-          <button className="flex items-center border-0 gap-2 py-2 text-gray-600 font-semibold">
+          </button> */}
+
+          <Link legacyBehavior href="/menu">
+            <a className="a flex justify-center bg-primary uppercase items-center gap-2 text-white px-4 py-2 rounded-full">
+              Order now
+              <Right />
+            </a>
+          </Link>
+
+          {/* <button className="flex items-center border-0 gap-2 py-2 text-gray-600 font-semibold">
             Learn more
             <Right />
+          </button> */}
+          <button className="b">
+            <Link legacyBehavior href="#about">
+              <a className=" flex items-center border-0 gap-2 py-2 text-gray-600 font-semibold">
+                Learn more
+                <Right />
+              </a>
+            </Link>
           </button>
         </div>
       </div>
